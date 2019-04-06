@@ -1,8 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/env node
+
+const fs = require("fs");
+const path = require("path");
 
 if (process.argv.length < 3) {
-  console.error('Component name should be provided');
+  console.error("Component name should be provided");
   process.exit(1);
 }
 
@@ -17,21 +19,21 @@ if (!fs.existsSync(dir)) {
   process.exit(1);
 }
 
-function writeToFile(name, data = '') {
+function writeToFile(name, data = "") {
   const pathToFile = path.join(dir, name);
-  fs.writeFile(path.join(dir, name), data, { encoding: 'utf8' }, err => {
+  fs.writeFile(path.join(dir, name), data, { encoding: "utf8" }, err => {
     if (err) {
-      console.error('Error writing file!', err);
+      console.error("Error writing file!", err);
       process.exit(1);
     } else {
-      console.log('Creating', pathToFile);
+      console.log("Creating", pathToFile);
     }
   });
 }
 
-writeToFile('operations.graphql');
+writeToFile("operations.graphql");
 writeToFile(
-  'index.js',
+  "index.js",
   `import React from 'react';
 import cs from './styles.module.css';
 
@@ -42,7 +44,7 @@ const ${componentName} = () => (
 export default ${componentName};`
 );
 writeToFile(
-  'styles.modules.css',
+  "styles.modules.css",
   `.${componentName.toLowerCase()} {
 
 }`
