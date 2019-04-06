@@ -1,0 +1,19 @@
+{
+  "name": "component-generator",
+  "version": "1.0.0",
+  "description": "It generates components with .graphql files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellSquirrel/component-generator.git"
+  },
+  "author": "HellSquirrel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HellSquirrel/component-generator/issues"
+  },
+  "homepage": "https://github.com/HellSquirrel/component-generator#readme"
+}
