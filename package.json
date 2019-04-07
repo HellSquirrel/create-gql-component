@@ -1,10 +1,13 @@
 {
-  "name": "component-generator",
+  "name": "new-gql-component",
   "version": "1.0.0",
   "description": "It generates components with .graphql files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "new-gql-component": "./index.js"
   },
   "repository": {
     "type": "git",
