@@ -19,33 +19,41 @@ if (!fs.existsSync(dir)) {
   process.exit(1);
 }
 
-function writeToFile(name, data = "") {
+function writeToFile(name, getData = () => "") {
   const pathToFile = path.join(dir, name);
-  fs.writeFile(path.join(dir, name), data, { encoding: "utf8" }, err => {
-    if (err) {
-      console.error("Error writing file!", err);
-      process.exit(1);
-    } else {
-      console.log("Creating", pathToFile);
+  const componentName = path.basename(dir);
+  fs.writeFile(
+    path.join(dir, name),
+    getData(componentName),
+    { encoding: "utf8" },
+    err => {
+      if (err) {
+        console.error("Error writing file!", err);
+        process.exit(1);
+      } else {
+        console.log("Creating", pathToFile);
+      }
     }
-  });
+  );
 }
+
+const toLower = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
 
 writeToFile("operations.graphql");
 writeToFile(
   "index.js",
-  `import React from 'react';
+  componentName => `import React from 'react';
 import cs from './styles.module.css';
 
 const ${componentName} = () => (
-  <div className={cs.${componentName.toLowerCase()}}>👋</div>
+  <div className={cs.${toLower(componentName)}}>👋</div>
 );
 
 export default ${componentName};`
 );
 writeToFile(
   "styles.modules.css",
-  `.${componentName.toLowerCase()} {
+  componentName => `.${toLower(componentName)} {
 
 }`
 );
