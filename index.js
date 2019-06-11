@@ -43,7 +43,7 @@ writeToFile("operations.graphql");
 writeToFile(
   "index.js",
   componentName => `import React from 'react';
-import cs from './styles.module.css';
+import cs from './styles';
 
 const ${componentName} = () => (
   <div className={cs.${toLower(componentName)}}>👋</div>
@@ -52,7 +52,7 @@ const ${componentName} = () => (
 export default ${componentName};`
 );
 writeToFile(
-  "styles.modules.css",
+  "styles.module.css",
   componentName => `.${toLower(componentName)} {
 
 }`
