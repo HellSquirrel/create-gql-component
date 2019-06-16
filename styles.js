@@ -96,5 +96,62 @@ html {
 
 .plate:hover .image {
   opacity: 0.2;
-}`
+}`,
+  ProcessItemForm: `.form {
+  display: grid;
+  margin: 0 auto 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-rows: 45px;
+  width: 100%;
+  max-width: 840px;
+  align-items: start;
+}
+
+.input {
+  font-size: 15px;
+  height: 38px;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+}
+
+.button {
+  border: none;
+  background: #bf6c35;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.input:focus {
+  border-bottom: 1px solid #bf6c35;
+}`,
+  UpdateItemForm: `.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.content {
+  max-width: 480px;
+  width: calc(100vw - 10px);
+  margin: 20px auto;
+  padding: 40px;
+  background: #fff;
+}
+
+.close {
+  border: none;
+  background: #9fa628;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+}
+`
 };

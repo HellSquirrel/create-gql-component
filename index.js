@@ -37,23 +37,23 @@ function writeToFile(name, getData = () => "") {
 
 const toLower = str => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
 
-// writeToFile("operations.graphql");
-// writeToFile(
-//   "index.js",
-//   componentName => `import React from 'react';
-// import cs from './styles';
+writeToFile("operations.graphql");
+writeToFile(
+  "index.js",
+  componentName => `import React from 'react';
+import cs from './styles';
 
-// const ${componentName} = () => (
-//   <div className={cs.${toLower(componentName)}}>👋</div>
-// );
+const ${componentName} = () => (
+  <div className={cs.${toLower(componentName)}}>👋</div>
+);
 
-// export default ${componentName};`
-// );
+export default ${componentName};`
+);
 
 const getStylesContent = componentName =>
   styles[componentName]
     ? styles[componentName]
-    : `${toLower(componentName)} {
+    : `.${toLower(componentName)} {
 
 }`;
 writeToFile("styles.module.css", getStylesContent);
