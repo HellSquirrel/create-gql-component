@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const styles = require("./styles.js");
 
 if (process.argv.length < 3) {
   console.error("Component name should be provided");
@@ -14,9 +15,6 @@ const dir = path.join(process.cwd(), componentName);
 
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
-} else {
-  console.error(`Directory ${dir} already exists`);
-  process.exit(1);
 }
 
 function writeToFile(name, getData = () => "") {
@@ -51,9 +49,11 @@ const ${componentName} = () => (
 
 export default ${componentName};`
 );
-writeToFile(
-  "styles.module.css",
-  componentName => `.${toLower(componentName)} {
 
-}`
-);
+const getStylesContent = componentName =>
+  styles[componentName]
+    ? styles[componentName]
+    : `${toLower(componentName)} {
+
+}`;
+writeToFile("styles.module.css", getStylesContent);
