@@ -1,5 +1,5 @@
 {
-  "name": "new-gql-component",
+  "name": "@hellsquirrel/create-gql-component",
   "version": "1.1.0",
   "description": "It generates components with .graphql files",
   "main": "index.js",
@@ -7,16 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "new-gql-component": "./index.js"
+    "create": "./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HellSquirrel/component-generator.git"
+    "url": "git+https://github.com/HellSquirrel/create-gql-component.git"
   },
   "author": "HellSquirrel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HellSquirrel/component-generator/issues"
+    "url": "https://github.com/HellSquirrel/create-gql-component/issues"
   },
-  "homepage": "https://github.com/HellSquirrel/component-generator#readme"
+  "homepage": "https://github.com/HellSquirrel/create-gql-component#readme"
 }
